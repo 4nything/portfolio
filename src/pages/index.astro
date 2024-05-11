@@ -1,0 +1,549 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Luca Smigoski</title>
+    <script>
+      const handleScroll = () => {
+        const navbar = document.querySelector("nav");
+        if (!navbar) return;
+        if (window.scrollY > 0) {
+          navbar.classList.add("nav-scrolled");
+        } else {
+          navbar.classList.remove("nav-scrolled");
+        }
+      };
+
+      window?.addEventListener("scroll", handleScroll);
+    </script>
+  </head>
+  <body class="bg-main-bg relative">
+    <nav
+      class="flex flex-row justify-between items-center w-full min-h-[62px] fixed top-0 px-[5%] md:px-[15%]"
+    >
+      <div>Logo</div>
+      <div class="hidden md:flex flex-row gap-4">
+        <a
+          href="#about"
+          class="no-underline text-white font-bold hover:border-b-main-highlight border-b-transparent border-b-4 pt-1"
+        >
+          About
+        </a>
+        <a
+          href="#experience"
+          class="no-underline text-white font-bold hover:border-b-main-highlight border-b-transparent border-b-4 pt-1"
+        >
+          Experience
+        </a>
+        <a
+          href="#technologies"
+          class="no-underline text-white font-bold hover:border-b-main-highlight border-b-transparent border-b-4 pt-1"
+        >
+          Technologies
+        </a>
+        <a
+          href="#contact"
+          class="no-underline text-white font-bold hover:border-b-main-highlight border-b-transparent border-b-4 pt-1"
+        >
+          About
+        </a>
+      </div>
+    </nav>
+    <section
+      id="about"
+      class="w-full px-[5%] md:px-[15%] flex items-center flex-col md:flex-row md:gap-16"
+    >
+      <img width="120" height="120" class="mt-8" />
+      <div class="flex flex-col gap-2 flex-1">
+        <h3 class="text-white text-3xl font-bold w-fit">Luca Smigoski</h3>
+        <p class="text-white text-justify">
+          Hey there! I'm Luca Smigoski, your go-to guy for all things web,
+          mobile, and SaaS. I'm all about turning big ideas into even bigger
+          realities with a dash of creativity and a whole lot of code. Whether
+          you're looking to build from scratch or give your existing platform a
+          facelift, I'm here to make it happen. Ready to make some digital magic
+          together? Let's get started!
+        </p>
+      </div>
+    </section>
+    <section id="experience" class="w-full px-[5%] md:px-[15%] pt-16">
+      <h1 class="text-white text-3xl font-bold">Experience</h1>
+      <div
+        class="relative w-full after:content-[''] after:absolute after:w-2 after:bg-white after:top-0 after:bottom-0 after:left-1/2 after:ml-[-3px] mt-16"
+      >
+        <div class="timeline-container__left">
+          <div class="timeline-content">
+            <div class="flex justify-between items-center">
+              <h2 class="font-bold text-lg">Void.GG</h2>
+              <span class="text-sm text-right text-slate-400"
+                >Mar/2023 - Current</span
+              >
+            </div>
+            <p class="mt-4">
+              As a software engineer, I focus on developing both front-end and
+              back-end components for web applications, along with dev-ops
+              responsibilities related to the development and deployment of
+              server instances, serverless functions, and queue systems. My
+              primary project was developing a tracking system for player and
+              match data in games like Counter Strike 2 and Old School Runescape
+              (full stack) and Fortnite (front-end only). Additionally, I've
+              created web scraping bots for news and a content creation system
+              leveraging OpenAI technology. My roles also included updating
+              libraries, starting projects from scratch, and upgrading to newer
+              versions of frameworks.
+            </p>
+            <div class="flex flex-col gap-2 mt-8">
+              <span class="">Technologies: </span>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                >
+                  <div class="tooltip">
+                    <span class="tooltiptext">Apify</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/apify.png"
+                      alt="Apify"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">OpenAI</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/openai.png"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                >
+                  <div class="tooltip">
+                    <span class="tooltiptext">Lambda</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/lambda.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">S3</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/s3.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">SQS</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/sqs.png"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                >
+                  <div class="tooltip">
+                    <span class="tooltiptext">MongoDB</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/mongo.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">PostgreSQL</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/postgresql.png"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                >
+                  <div class="tooltip">
+                    <span class="tooltiptext">React</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/react.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">NextJs</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/next.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">NestJs</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/nest.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">Python</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/python.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">Rust</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/rust.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">Typescript</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/ts.png"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-container__right">
+          <div class="timeline-content">
+            <div class="flex justify-between items-center">
+              <h2 class="font-bold text-lg">Void.GG</h2>
+              <span class="text-sm text-right text-slate-400"
+                >Mar/2023 - Current</span
+              >
+            </div>
+            <p class="mt-4">
+              As a software engineer, I focus on developing both front-end and
+              back-end components for web applications, along with dev-ops
+              responsibilities related to the development and deployment of
+              server instances, serverless functions, and queue systems. My
+              primary project was developing a tracking system for player and
+              match data in games like Counter Strike 2 and Old School Runescape
+              (full stack) and Fortnite (front-end only). Additionally, I've
+              created web scraping bots for news and a content creation system
+              leveraging OpenAI technology. My roles also included updating
+              libraries, starting projects from scratch, and upgrading to newer
+              versions of frameworks.
+            </p>
+            <div class="flex flex-col gap-2 mt-8">
+              <span class="">Technologies: </span>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                >
+                  <div class="tooltip">
+                    <span class="tooltiptext">Apify</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/apify.png"
+                      alt="Apify"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">OpenAI</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/openai.png"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                >
+                  <div class="tooltip">
+                    <span class="tooltiptext">Lambda</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/lambda.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">S3</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/s3.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">SQS</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/sqs.png"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                >
+                  <div class="tooltip">
+                    <span class="tooltiptext">MongoDB</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/mongo.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">PostgreSQL</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/postgresql.png"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                >
+                  <div class="tooltip">
+                    <span class="tooltiptext">React</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/react.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">NextJs</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/next.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">NestJs</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/nest.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">Python</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/python.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">Rust</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm bg-white object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/rust.png"
+                    />
+                  </div>
+                  <div class="tooltip">
+                    <span class="tooltiptext">Typescript</span>
+                    <img
+                      width="24"
+                      height="24"
+                      class="rounded-sm object-fit"
+                      src="https://ddw0jzv6yetk6.cloudfront.net/ts.png"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Inter, Arial, sans-serif;
+      }
+
+      section {
+        min-height: 100vh;
+      }
+
+      nav {
+        background-color: #0b1421bf;
+        transition: 0.3s ease;
+        border-color: #434343;
+        z-index: 2;
+      }
+
+      .nav-scrolled {
+        border-bottom: 1px solid #434343;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 0 10px 5px #162d48;
+      }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: help;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: fit-content;
+        max-width: 200px;
+        word-break: keep-all;
+        padding: 4px 8px;
+        background-color: #0b1421;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        position: absolute;
+        margin-top: -32px;
+        z-index: 1;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+      }
+
+      .timeline: {
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        background-color: white;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+
+      .timeline-container__left {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+        left: 0;
+      }
+      .timeline-container__right {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+        left: 50%;
+      }
+
+      .timeline-container__left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid #1f3a5f;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent #1f3a5f;
+      }
+
+      .timeline-container__right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid #1f3a5f;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #1f3a5f transparent transparent;
+      }
+
+      .timeline-container__left::after,
+      .timeline-container__right::after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        right: -13px;
+        background-color: white;
+        border: 3px solid #3768ab;
+        top: 19px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .timeline-container__right::after {
+        left: -11px;
+      }
+
+      .timeline-content {
+        color: white;
+        padding: 20px 30px;
+        background-color: #1f3a5f;
+        position: relative;
+        border-radius: 6px;
+      }
+    </style>
+  </body>
+</html>
