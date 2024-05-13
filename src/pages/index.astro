@@ -48,21 +48,25 @@
         >
           Technologies
         </a>
-        <a
+        <!-- <a
           href="#contact"
           class="no-underline text-white font-bold hover:border-b-main-highlight border-b-transparent border-b-4 pt-1"
         >
           About
-        </a>
+        </a> -->
       </div>
     </nav>
     <section
       id="about"
-      class="w-full px-[5%] md:px-[15%] flex items-center flex-col md:flex-row md:gap-16"
+      class="w-full px-[5%] md:px-[15%] flex items-center flex-col md:flex-row md:gap-16 pt-16 md:pt-0"
     >
       <img width="120" height="120" class="mt-8" />
-      <div class="flex flex-col gap-2 flex-1">
-        <h3 class="text-white text-3xl font-bold w-fit">Luca Smigoski</h3>
+      <div class="flex flex-col gap-2 flex-1 pt-8 md:pt-0">
+        <h3
+          class="text-white text-3xl font-bold text-center w-full md:text-left"
+        >
+          Luca Smigoski
+        </h3>
         <p class="text-white text-justify">
           Hey there! I'm Luca Smigoski, your go-to guy for all things web,
           mobile, and SaaS. I'm all about turning big ideas into even bigger
@@ -75,333 +79,452 @@
     </section>
     <section id="experience" class="w-full px-[5%] md:px-[15%] pt-16">
       <h1 class="text-white text-3xl font-bold">Experience</h1>
-      <div
-        class="relative w-full after:content-[''] after:absolute after:w-2 after:bg-white after:top-0 after:bottom-0 after:left-1/2 after:ml-[-3px] mt-16"
-      >
-        <div class="timeline-container__left">
-          <div class="timeline-content">
-            <div class="flex justify-between items-center">
-              <h2 class="font-bold text-lg">Void.GG</h2>
-              <span class="text-sm text-right text-slate-400"
-                >Mar/2023 - Current</span
-              >
-            </div>
-            <p class="mt-4">
-              As a software engineer, I focus on developing both front-end and
-              back-end components for web applications, along with dev-ops
-              responsibilities related to the development and deployment of
-              server instances, serverless functions, and queue systems. My
-              primary project was developing a tracking system for player and
-              match data in games like Counter Strike 2 and Old School Runescape
-              (full stack) and Fortnite (front-end only). Additionally, I've
-              created web scraping bots for news and a content creation system
-              leveraging OpenAI technology. My roles also included updating
-              libraries, starting projects from scratch, and upgrading to newer
-              versions of frameworks.
-            </p>
-            <div class="flex flex-col gap-2 mt-8">
-              <span class="">Technologies: </span>
-              <div class="flex flex-wrap gap-2">
-                <div
-                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+      <div class="relative mt-8">
+        <div class="timeline">
+          <div class="timeline-container__left">
+            <div class="timeline-content">
+              <div class="flex justify-between items-center">
+                <h2 class="font-bold text-lg">Void.GG</h2>
+                <span class="text-sm text-right text-slate-400"
+                  >Mar/2023 - Current</span
                 >
-                  <div class="tooltip">
-                    <span class="tooltiptext">Apify</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/apify.png"
-                      alt="Apify"
-                    />
+              </div>
+              <p class="mt-4">
+                As a software engineer, I focus on developing both front-end and
+                back-end components for web applications, along with dev-ops
+                responsibilities related to the development and deployment of
+                server instances, serverless functions, and queue systems. My
+                primary project was developing a tracking system for player and
+                match data in games like Counter Strike 2 and Old School
+                Runescape (full stack) and Fortnite (front-end only).
+                Additionally, I've created web scraping bots for news and a
+                content creation system leveraging OpenAI technology. My roles
+                also included updating libraries, starting projects from
+                scratch, and upgrading to newer versions of frameworks.
+              </p>
+              <div class="flex flex-col gap-2 mt-8">
+                <span class="">Technologies: </span>
+                <div class="flex flex-wrap gap-2">
+                  <div
+                    class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                  >
+                    <div class="tooltip">
+                      <span class="tooltiptext">Apify</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm bg-white object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/apify.png"
+                        alt="Apify"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">OpenAI</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm bg-white object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/openai.png"
+                      />
+                    </div>
                   </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">OpenAI</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/openai.png"
-                    />
-                  </div>
-                </div>
 
-                <div
-                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
-                >
-                  <div class="tooltip">
-                    <span class="tooltiptext">Lambda</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/lambda.png"
-                    />
+                  <div
+                    class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                  >
+                    <div class="tooltip">
+                      <span class="tooltiptext">Lambda</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm bg-white object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/lambda.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">S3</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm bg-white object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/s3.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">SQS</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm bg-white object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/sqs.png"
+                      />
+                    </div>
                   </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">S3</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/s3.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">SQS</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/sqs.png"
-                    />
-                  </div>
-                </div>
 
-                <div
-                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
-                >
-                  <div class="tooltip">
-                    <span class="tooltiptext">MongoDB</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/mongo.png"
-                    />
+                  <div
+                    class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                  >
+                    <div class="tooltip">
+                      <span class="tooltiptext">MongoDB</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/mongo.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">PostgreSQL</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/postgresql.png"
+                      />
+                    </div>
                   </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">PostgreSQL</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/postgresql.png"
-                    />
-                  </div>
-                </div>
 
-                <div
-                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
-                >
-                  <div class="tooltip">
-                    <span class="tooltiptext">React</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/react.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">NextJs</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/next.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">NestJs</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/nest.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">Python</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/python.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">Rust</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/rust.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">Typescript</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/ts.png"
-                    />
+                  <div
+                    class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                  >
+                    <div class="tooltip">
+                      <span class="tooltiptext">React</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/react.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">NextJs</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm bg-white object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/next.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">NestJs</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/nest.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">Python</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/python.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">Rust</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm bg-white object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/rust.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">Typescript</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/ts.png"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="timeline-container__right">
-          <div class="timeline-content">
-            <div class="flex justify-between items-center">
-              <h2 class="font-bold text-lg">Void.GG</h2>
-              <span class="text-sm text-right text-slate-400"
-                >Mar/2023 - Current</span
-              >
+          <div class="timeline-container__right">
+            <div class="timeline-content">
+              <div class="flex justify-between items-center">
+                <h2 class="font-bold text-lg">Freelance</h2>
+                <span class="text-sm text-right text-slate-400"
+                  >Sep/2018 - Current</span
+                >
+              </div>
+              <p class="mt-4">
+                As a freelance developer specializing in front-end and mobile
+                applications, I have crafted software solutions for both local
+                and international businesses. My projects include developing a
+                management software for an aluminum window company using Angular
+                versions 8 to 14, and a similar solution for a real estate
+                agency. Additionally, I built the public website for the
+                aluminum window company using HTML, CSS, JavaScript, and
+                AJAX/jQuery. On the mobile front, I developed an Android app for
+                pet adoption and rescue using Java and XML. I continue to engage
+                in freelance projects to study, enhance my skills, and develop
+                my own products.
+              </p>
+              <div class="flex flex-col gap-2 mt-8">
+                <span class="">Technologies: </span>
+                <div class="flex flex-wrap gap-2">
+                  <div
+                    class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                  >
+                    <div class="tooltip">
+                      <span class="tooltiptext">S3</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm bg-white object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/s3.png"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                  >
+                    <div class="tooltip">
+                      <span class="tooltiptext">MongoDB</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/mongo.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">PostgreSQL</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/postgresql.png"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                    class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                  >
+                    <div class="tooltip">
+                      <span class="tooltiptext">React</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/react.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">NextJs</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm bg-white object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/next.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">NestJs</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/nest.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">Python</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/python.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">Rust</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm bg-white object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/rust.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">Typescript</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/ts.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">Android (Java + XML)</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/android.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">Angular</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/angular.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p class="mt-4">
-              As a software engineer, I focus on developing both front-end and
-              back-end components for web applications, along with dev-ops
-              responsibilities related to the development and deployment of
-              server instances, serverless functions, and queue systems. My
-              primary project was developing a tracking system for player and
-              match data in games like Counter Strike 2 and Old School Runescape
-              (full stack) and Fortnite (front-end only). Additionally, I've
-              created web scraping bots for news and a content creation system
-              leveraging OpenAI technology. My roles also included updating
-              libraries, starting projects from scratch, and upgrading to newer
-              versions of frameworks.
-            </p>
-            <div class="flex flex-col gap-2 mt-8">
-              <span class="">Technologies: </span>
-              <div class="flex flex-wrap gap-2">
-                <div
-                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+          </div>
+          <div class="timeline-container__left">
+            <div class="timeline-content">
+              <div class="flex justify-between items-center">
+                <h2 class="font-bold text-lg">Naranja X</h2>
+                <span class="text-sm text-right text-slate-400"
+                  >Aug/2022 - Jun/2023</span
                 >
-                  <div class="tooltip">
-                    <span class="tooltiptext">Apify</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/apify.png"
-                      alt="Apify"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">OpenAI</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/openai.png"
-                    />
+              </div>
+              <p class="mt-4">
+                As a front-end developer at a financial services company, my
+                responsibilities included developing new features, resolving
+                bugs, managing weekly deployments, and conducting code reviews
+                using Angular versions 12 to 14. In the latter part of my
+                tenure, I was promoted to Senior Front-End Developer and took
+                charge of the front-end team. The company specializes in
+                financial products such as loans, credit cards, and virtualized
+                bank accounts.
+              </p>
+              <div class="flex flex-col gap-2 mt-8">
+                <span class="">Technologies: </span>
+                <div class="flex flex-wrap gap-2">
+                  <div
+                    class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                  >
+                    <div class="tooltip">
+                      <span class="tooltiptext">Angular</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/angular.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">Typescript</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/ts.png"
+                      />
+                    </div>
                   </div>
                 </div>
-
-                <div
-                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+              </div>
+            </div>
+          </div>
+          <div class="timeline-container__right">
+            <div class="timeline-content">
+              <div class="flex justify-between items-center">
+                <h2 class="font-bold text-lg">Epidata</h2>
+                <span class="text-sm text-right text-slate-400"
+                  >Oct/2021 - Aug/2022</span
                 >
-                  <div class="tooltip">
-                    <span class="tooltiptext">Lambda</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/lambda.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">S3</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/s3.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">SQS</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/sqs.png"
-                    />
+              </div>
+              <p class="mt-4">
+                As a semi-senior front-end developer contracted through Epidata,
+                I was initially assigned to work for Naranja X, a financial
+                services company. My duties included developing new features and
+                resolving bugs using Angular version 12. Due to my strong
+                performance, Naranja X absorbed me as their direct employee,
+                continuing with similar responsibilities. This role involved
+                handling critical development tasks that supported the company's
+                financial products, such as loans, credit cards, and virtualized
+                bank accounts.
+              </p>
+              <div class="flex flex-col gap-2 mt-8">
+                <span class="">Technologies: </span>
+                <div class="flex flex-wrap gap-2">
+                  <div
+                    class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                  >
+                    <div class="tooltip">
+                      <span class="tooltiptext">Angular</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/angular.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">Typescript</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/ts.png"
+                      />
+                    </div>
                   </div>
                 </div>
-
-                <div
-                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+              </div>
+            </div>
+          </div>
+          <div class="timeline-container__left">
+            <div class="timeline-content">
+              <div class="flex justify-between items-center">
+                <h2 class="font-bold text-lg">Baufest</h2>
+                <span class="text-sm text-right text-slate-400"
+                  >Jul/2021 - Oct/2021</span
                 >
-                  <div class="tooltip">
-                    <span class="tooltiptext">MongoDB</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/mongo.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">PostgreSQL</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/postgresql.png"
-                    />
-                  </div>
-                </div>
-
-                <div
-                  class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
-                >
-                  <div class="tooltip">
-                    <span class="tooltiptext">React</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/react.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">NextJs</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/next.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">NestJs</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/nest.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">Python</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/python.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">Rust</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm bg-white object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/rust.png"
-                    />
-                  </div>
-                  <div class="tooltip">
-                    <span class="tooltiptext">Typescript</span>
-                    <img
-                      width="24"
-                      height="24"
-                      class="rounded-sm object-fit"
-                      src="https://ddw0jzv6yetk6.cloudfront.net/ts.png"
-                    />
+              </div>
+              <p class="mt-4">
+                As a front-end developer, I was tasked with creating features
+                and fixing bugs for an internal management system at Molinos
+                Agro, a leading grain exporting company and raw material
+                producer. The system was designed to control and geolocate ships
+                at sea, tracking their segments and journeys to other countries
+                for export purposes. My work involved using Angular versions 8
+                to 10, focusing on enhancing the functionality and reliability
+                of the system to support the company's logistical and export
+                operations.
+              </p>
+              <div class="flex flex-col gap-2 mt-8">
+                <span class="">Technologies: </span>
+                <div class="flex flex-wrap gap-2">
+                  <div
+                    class="border-[1px] border-slate-500 rounded-md flex gap-2 items-center px-2 py-1"
+                  >
+                    <div class="tooltip">
+                      <span class="tooltiptext">Angular</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/angular.png"
+                      />
+                    </div>
+                    <div class="tooltip">
+                      <span class="tooltiptext">Typescript</span>
+                      <img
+                        width="24"
+                        height="24"
+                        class="rounded-sm object-fit"
+                        src="https://ddw0jzv6yetk6.cloudfront.net/ts.png"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -410,6 +533,7 @@
         </div>
       </div>
     </section>
+    <section id="technologies"></section>
 
     <style>
       html {
@@ -446,7 +570,7 @@
       .tooltip .tooltiptext {
         visibility: hidden;
         width: fit-content;
-        max-width: 200px;
+        max-width: 300px;
         word-break: keep-all;
         padding: 4px 8px;
         background-color: #0b1421;
@@ -462,7 +586,7 @@
         visibility: visible;
       }
 
-      .timeline: {
+      .timeline {
         position: relative;
         margin: 0 auto;
       }
@@ -543,6 +667,40 @@
         background-color: #1f3a5f;
         position: relative;
         border-radius: 6px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .timeline::after {
+          left: 31px !important;
+        }
+
+        .timeline-container__left,
+        .timeline-container__right {
+          width: 100%;
+          padding: 0 25px 0 70px;
+        }
+
+        .timeline-container__left::before,
+        .timeline-container__right::before {
+          left: 60px;
+          border: medium solid #1f3a5f;
+          border-width: 10px 10px 10px 0;
+          border-color: transparent #1f3a5f transparent transparent;
+        }
+
+        .timeline-container__left::after,
+        .timeline-container__right::after {
+          left: 19px;
+        }
+
+        .timeline-container__right {
+          margin-top: 24px;
+          left: 0%;
+        }
+
+        .timeline-container__left:not(:first-of-type) {
+          margin-top: 24px;
+        }
       }
     </style>
   </body>
