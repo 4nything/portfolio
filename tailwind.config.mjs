@@ -6,6 +6,8 @@ export default {
       colors: {
         "main-bg": "#0b1421",
         "main-highlight": "#3535d0",
+        "main-bg-75": "#0b1421bf",
+        "main-border": "#434343"
       },
     },
   },
