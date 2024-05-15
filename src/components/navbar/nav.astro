@@ -1,42 +1,112 @@
 <nav
   class="flex flex-row justify-between items-center w-full min-h-[62px] fixed top-0 px-[5%] md:px-[15%] bg-main-bg-75 border-main-border z-[2]"
 >
-  <div>Logo</div>
-  <div class="hidden md:flex flex-row gap-4">
+  <img
+    src="https://ddw0jzv6yetk6.cloudfront.net/logo.png"
+    width="80"
+    style="aspect-ratio: 16/9; object-fit: cover;"
+    alt="Logo Luca Smigoski"
+  />
+  <button onclick="handleOpenMenu()" class="md:hidden">
+    <i class="fa-solid fa-bars text-white"></i>
+  </button>
+  <div
+    id="nav-container"
+    class="w-screen h-0 flex fixed z-30 md:z-1 top-0 left-0 flex-col gap-4 bg-[#1f3a5f8a] md:w-auto md:h-auto md:relative md:bg-transparent md:flex-row md:pt-0"
+  >
+    <button class="self-end mt-5 mr-5 md:hidden" onclick="handleCloseMenu()">
+      <i class="fa-solid fa-x text-white"></i>
+    </button>
     <a
+      onclick="handleCloseMenu()"
       href="#about"
-      class="no-underline text-white font-bold hover:border-b-main-highlight border-b-transparent border-b-4 pt-1"
+      class="no-underline text-white font-bold md:hover:border-b-main-highlight border-b-transparent border-b-4 pt-1 pl-8 md:pl-0"
     >
-      About
+      <i class="fa-solid fa-user w-4"></i>
+      <span class="ml-2 md:ml-1"> About </span>
     </a>
     <a
+      onclick="handleCloseMenu()"
       href="#experience"
-      class="no-underline text-white font-bold hover:border-b-main-highlight border-b-transparent border-b-4 pt-1"
+      class="no-underline text-white font-bold md:hover:border-b-main-highlight border-b-transparent border-b-4 pt-1 pl-8 md:pl-0"
     >
-      Experience
+      <i class="fa-solid fa-briefcase w-4"></i>
+      <span class="ml-2 md:ml-1"> Experience </span>
     </a>
     <a
+      onclick="handleCloseMenu()"
       href="#technologies"
-      class="no-underline text-white font-bold hover:border-b-main-highlight border-b-transparent border-b-4 pt-1"
+      class="no-underline text-white font-bold md:hover:border-b-main-highlight border-b-transparent border-b-4 pt-1 pl-8 md:pl-0"
     >
-      Technologies
+      <i class="fa-solid fa-code w-4"></i>
+      <span class="ml-2 md:ml-1"> Technologies </span>
     </a>
     <a
+      onclick="handleCloseMenu()"
       href="#contact"
-      class="no-underline text-white font-bold hover:border-b-main-highlight border-b-transparent border-b-4 pt-1"
+      class="no-underline text-white font-bold md:hover:border-b-main-highlight border-b-transparent border-b-4 pt-1 pl-8 md:pl-0"
     >
-      Contact
+      <i class="fa-solid fa-envelope w-4"></i>
+      <span class="ml-2 md:ml-1"> Contact </span>
     </a>
   </div>
-</nav>
+  <script
+    is:inline
+    src="https://kit.fontawesome.com/4f8940d97f.js"
+    crossorigin="anonymous"></script>
+  <script is:inline>
+    function handleOpenMenu() {
+      handleBlur(true);
+      const body = document.querySelector("body");
+      body.style.overflow = "hidden";
 
-<style>
-  nav {
-    transition: 0.3s ease;
-  }
-  .nav-scrolled {
-    border-bottom: 1px solid #434343;
-    backdrop-filter: blur(15px);
-    box-shadow: 0 0 10px 5px #162d48;
-  }
-</style>
+      const container = document.querySelector("#nav-container");
+      container.classList.remove("h-0");
+      container.classList.add("h-screen");
+    }
+
+    function handleCloseMenu() {
+      handleBlur(false);
+      const body = document.querySelector("body");
+      body.style.overflow = "auto";
+
+      const container = document.querySelector("#nav-container");
+      container.classList.add("h-0");
+      container.classList.remove("h-screen");
+    }
+
+    function handleBlur(isOpen) {
+      const nav = document.querySelector("nav");
+      const container = document.querySelector("#nav-container");
+      if (isOpen && nav.classList.contains("nav-scrolled")) {
+        nav.style.backdropFilter = "none";
+        return;
+      }
+      nav.style.backdropFilter = "blur(15px)";
+      return;
+    }
+  </script>
+  <style>
+    nav {
+      transition: height 0.3s ease;
+    }
+
+    #nav-container {
+      overflow: hidden;
+      backdrop-filter: blur(50px) !important;
+      transition: 0.3s ease;
+    }
+
+    .nav-scrolled {
+      border-bottom: 1px solid #434343;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 10px 5px #162d48;
+    }
+
+    @media screen and (min-width: 768px) {
+      #nav-container {
+        backdrop-filter: none !important;
+      }
+    }
+  </style>
+</nav>

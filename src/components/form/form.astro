@@ -1,0 +1,86 @@
+<form
+  id="contactForm"
+  action="javascript:handleForm()"
+  class="mt-8 w-full bg-[#152841] flex flex-col gap-8 p-4 rounded-lg border-[1px] border-slate-700"
+>
+  <div class="grid grid-cols-1 w-full lg:grid-cols-3 gap-4">
+    <div class="flex flex-col gap-2">
+      <label for="name" class="text-white">Name</label>
+      <input
+        name="name"
+        required
+        class="rounded-2xl h-8 border-main-border border-[1px] bg-[#0b1421] p-4 text-white"
+      />
+    </div>
+    <div class="flex flex-col gap-2">
+      <label for="email" class="text-white">Email</label>
+      <input
+        name="email"
+        type="email"
+        required
+        class="rounded-2xl h-8 border-main-border border-[1px] bg-[#0b1421] p-4 text-white"
+      />
+    </div>
+    <div class="flex flex-col gap-2">
+      <label for="phone" class="text-white">Phone</label>
+      <input
+        name="phone"
+        type="tel"
+        class="rounded-2xl h-8 border-main-border border-[1px] bg-[#0b1421] p-4 text-white"
+      />
+    </div>
+    <div class="flex flex-col col-span-1 lg:col-span-3 gap-2">
+      <label for="message" class="text-white">Message</label>
+      <textarea
+        name="message"
+        rows="7"
+        class="rounded-2xl border-main-border border-[1px] bg-[#0b1421] p-4 text-white"
+        required></textarea>
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="self-center md:self-end bg-[#2d79c7] rounded-sm px-4 py-1 text-white"
+  >
+    Send
+  </button>
+</form>
+
+<script is:inline>
+  function handleForm() {
+    const formData = new FormData(contactForm);
+    fetch("https://formspree.io/f/xnqergdz", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    }).then((response) => {
+      if (response.ok) {
+        const snackbar = document.querySelector("#snackbar");
+        snackbar.innerHTML = "Message sent successfully!";
+        snackbar.classList.add("success");
+        snackbar.classList.add("show");
+        contactForm.reset();
+
+        setTimeout(() => {
+          snackbar.classList.remove("show");
+          snackbar.classList.remove("success");
+        }, 2000);
+      } else {
+        response.json().then((data) => {
+          console.error(data);
+          const snackbar = document.querySelector("#snackbar");
+          snackbar.innerHTML = "Error sending message";
+          snackbar.classList.add("error");
+          snackbar.classList.add("show");
+
+          setTimeout(() => {
+            snackbar.classList.remove("show");
+            snackbar.classList.remove("error");
+          }, 2000);
+        });
+      }
+    });
+  }
+</script>

@@ -4,12 +4,55 @@ import About from "../components/sections/about.astro";
 import Experience from "../components/sections/experience.astro";
 import Technologies from "../components/sections/technologies.astro";
 import Contact from "../components/sections/contact.astro";
+import Snackbar from "../components/snackbar/snackbar.astro";
+import Footer from "../components/footer/footer.astro";
 ---
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Luca Smigoski" />
+    <meta
+      name="description"
+      content="Luca Smigoski is a skilled software engineer. Explore my personal website to discover my skills, technologies, and experience in front-end, back-end, full-stack, mobile development, DevOps, and more. I am open to job offers, project collaborations, and investment opportunities."
+    />
+
+    <meta
+      name="keywords"
+      content="Luca Smigoski, software engineer, front-end developer, back-end developer, full-stack developer, mobile developer, DevOps, skills, technologies, experience, portfolio, projects, investments"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Portfolio | Luca Smigoski" />
+    <meta
+      property="og:description"
+      content="Luca Smigoski is a skilled software engineer. Explore my personal website to discover my skills, technologies, and experience."
+    />
+    <meta property="og:url" content="https://lucasmigoski.com.ar" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://ddw0jzv6yetk6.cloudfront.net/logo.png"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portfolio | Luca Smigoski" />
+    <meta
+      name="twitter:description"
+      content="Luca Smigoski is a skilled software engineer. Explore my personal website to discover my skills, technologies, and experience."
+    />
+    <meta name="twitter:url" content="https://lucasmigoski.com.ar" />
+    <meta
+      name="twitter:image"
+      content="https://ddw0jzv6yetk6.cloudfront.net/logo.png"
+    />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <meta http-equiv="content-language" content="en, es" />
+    <title>Portfolio | Luca Smigoski</title>
+    <meta name="robots" content="index, follow" />
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +60,11 @@ import Contact from "../components/sections/contact.astro";
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap"
       rel="stylesheet"
     />
+    <script
+      is:inline
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <title>Luca Smigoski</title>
     <script>
       const handleScroll = () => {
@@ -38,6 +86,8 @@ import Contact from "../components/sections/contact.astro";
     <Experience />
     <Technologies />
     <Contact />
+    <Snackbar />
+    <Footer />
   </body>
 </html>
 
@@ -48,5 +98,9 @@ import Contact from "../components/sections/contact.astro";
 
   body {
     font-family: Inter, Arial, sans-serif;
+  }
+
+  textarea {
+    resize: none;
   }
 </style>

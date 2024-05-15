@@ -1,0 +1,65 @@
+<div
+  id="snackbar"
+  class="invisible bg-main-highlight text-white text-center rounded-md py-4 p-8 fixed z-[2] right-8 bottom-8 h-fit"
+>
+  <style>
+    #snackbar.success {
+      background-color: #005100;
+    }
+    #snackbar.error {
+      background-color: #580000;
+    }
+    #snackbar.show {
+      visibility: visible;
+      -webkit-animation:
+        fadein 0.5s,
+        fadeout 0.5s 2.5s;
+      animation:
+        fadein 0.5s,
+        fadeout 0.5s 2.5s;
+    }
+    @-webkit-keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
+      }
+      to {
+        bottom: 30px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadein {
+      from {
+        bottom: 0;
+        opacity: 0;
+      }
+      to {
+        bottom: 30px;
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeout {
+      from {
+        bottom: 30px;
+        opacity: 1;
+      }
+      to {
+        bottom: 0;
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeout {
+      from {
+        bottom: 30px;
+        opacity: 1;
+      }
+      to {
+        bottom: 0;
+        opacity: 0;
+      }
+    }
+  </style>
+</div>
