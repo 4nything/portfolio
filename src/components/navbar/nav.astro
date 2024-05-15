@@ -77,8 +77,7 @@
 
     function handleBlur(isOpen) {
       const nav = document.querySelector("nav");
-      const container = document.querySelector("#nav-container");
-      if (isOpen && nav.classList.contains("nav-scrolled")) {
+      if (isOpen) {
         nav.style.backdropFilter = "none";
         return;
       }
