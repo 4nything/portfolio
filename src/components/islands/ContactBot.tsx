@@ -3,11 +3,7 @@ import * as THREE from 'three';
 import { motion, AnimatePresence } from 'framer-motion';
 import Toast from './Toast';
 
-interface ContactBotProps {
-  onOpen: () => void;
-}
-
-function Bot3D({ onOpen }: ContactBotProps) {
+function Bot3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
@@ -172,7 +168,7 @@ export default function ContactBot() {
         whileTap={{ scale: 0.95 }}
         aria-label="Open contact panel"
       >
-        <Bot3D onOpen={() => setIsOpen(true)} />
+        <Bot3D />
       </motion.button>
 
       <AnimatePresence>
