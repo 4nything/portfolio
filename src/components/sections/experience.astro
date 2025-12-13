@@ -1,10 +1,97 @@
 ---
-import Timeline from "../timeline/timeline.astro";
+import ScrollReveal from '../islands/ScrollReveal';
+
+const experiences = [
+  {
+    title: 'Software Engineer',
+    company: 'Globaltask',
+    period: 'Oct 2024 - Current',
+    description: 'Develop web applications for audit and compliance sector, working directly with Safeguard Privacy on mission-critical software solutions. Handle sensitive data processing and compliance workflows, ensuring security and regulatory adherence. Work across the full stack using Angular (versions 8 to 20), .NET 8, Redis for caching and session management, MSSQL for data persistence, TypeScript, and TypeORM for database operations. Manage complex state management, optimize performance, and maintain high code quality standards in a security-focused environment.',
+    tech: ['Angular', 'NestJS', 'C# .NET', 'MSSQL', 'Redis', 'Docker', 'TypeScript', 'TypeORM'],
+  },
+  {
+    title: 'Software Engineer',
+    company: 'Freelance',
+    period: 'Sep 2018 - Current',
+    description: 'Deliver full-stack and mobile solutions for local and international clients, using freelance projects as a continuous learning platform to explore emerging technologies. Web: Built enterprise management systems using Angular (versions 8-14) for an aluminum window company and real estate agency, plus responsive public websites with HTML, CSS, JavaScript, and AJAX/jQuery. Mobile: Developed an Android pet adoption platform and explored AI-powered personal trainer applications with Flutter, NestJS, and OpenAI. Web3: Created a portfolio control application with MetaMask and Phantom wallet integrations for blockchain asset management. Currently building a personal financial management platform with partners using Next.js, NestJS, MongoDB, and payment integrations (Stripe, MercadoPago). I\'m passionate about learning new languages, technologies, and frameworks, constantly expanding my skill set to stay current with industry trends.',
+    tech: ['React', 'Angular', 'Next.js', 'NestJS', 'TypeScript', 'Flutter', 'MongoDB', 'PostgreSQL', 'Web3', 'Stripe', 'MercadoPago', 'OpenAI'],
+  },
+  {
+    title: 'Software Engineer',
+    company: 'Void.gg',
+    period: 'Mar 2023 - Oct 2024',
+    description: 'Developed full-stack web applications with end-to-end ownership from architecture to deployment. Built a comprehensive tracking system for player and match data in Counter Strike 2 and Old School Runescape (full-stack) and Fortnite (front-end), processing real-time gaming statistics. Created web scraping infrastructure for news aggregation and implemented AI-powered content generation systems using OpenAI. Managed DevOps responsibilities including server instances, serverless functions, and queue systems on AWS. Led framework migrations, library updates, and greenfield project development, ensuring scalable and maintainable codebases.',
+    tech: ['Next.js', 'React', 'NestJS', 'Python', 'Rust', 'TypeScript', 'MongoDB', 'PostgreSQL', 'AWS', 'Github Actions', 'Apify', 'OpenAI'],
+  },
+  {
+    title: 'Full-stack Developer',
+    company: 'Naranja X',
+    period: 'Aug 2022 - Jun 2023',
+    description: 'Developed and maintained critical features for financial products including loans, credit cards, and virtualized bank accounts. Managed weekly deployments, conducted thorough code reviews, and resolved production bugs using Angular versions 12-14. Promoted to Senior Front-End Developer, leading the front-end team and taking ownership of architectural decisions, code quality standards, and team mentoring. Ensured reliable delivery of features that directly impacted the company\'s financial technology platform.',
+    tech: ['Angular', 'TypeScript', 'Node.js', 'Express'],
+  },
+  {
+    title: 'Full-stack Developer',
+    company: 'Epidata',
+    period: 'Oct 2021 - Aug 2022',
+    description: 'Served as a semi-senior front-end developer contracted through Epidata, initially assigned to Naranja X, a leading financial services company. Developed new features and resolved critical bugs using Angular 12, contributing to the company\'s core financial products including loans, credit cards, and virtualized bank accounts. Demonstrated strong performance leading to direct employment with Naranja X, continuing similar responsibilities with increased ownership of development tasks that directly impacted the company\'s financial technology platform.',
+    tech: ['Angular', 'TypeScript', 'Node.js', 'Express'],
+  },
+  {
+    title: 'Frontend Developer',
+    company: 'Baufest',
+    period: 'Jul 2021 - Oct 2021',
+    description: 'Developed and maintained features for an internal management system at Molinos Agro, a leading grain exporting company and raw material producer. The system controlled and geolocated ships at sea, tracking their segments and journeys to international destinations for export operations. Worked with Angular versions 8-10 to enhance system functionality and reliability, supporting critical logistical and export processes for the company.',
+    tech: ['Angular', 'TypeScript', 'C# .NET'],
+  },
+];
 ---
 
-<section id="experience" class="w-full px-[5%] md:px-[15%] pt-16 min-h-[100vh]">
-  <h1 class="text-white text-3xl font-bold">Experience</h1>
-  <div class="relative mt-8">
-    <Timeline />
+<section id="experience" class="section-container bg-neutral-900/50">
+  <ScrollReveal>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center">
+      <span class="gradient-text">Experience</span>
+    </h2>
+  </ScrollReveal>
+  
+  <ScrollReveal delay={100}>
+    <p class="text-lg text-neutral-400 text-center max-w-2xl mx-auto mb-16">
+      Over 6 years of experience building scalable web applications, from financial technology platforms 
+      to gaming tracking systems. Led front-end teams, managed full-stack projects, and continuously 
+      expanded skills across diverse technologies and industries.
+    </p>
+  </ScrollReveal>
+
+  <div class="max-w-4xl mx-auto">
+    {experiences.map((exp, index) => (
+      <ScrollReveal delay={index * 100}>
+        <div class="relative mb-12">
+          <!-- Timeline line -->
+          {index < experiences.length - 1 && (
+            <div class="absolute left-8 top-16 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 to-transparent" />
+          )}
+          
+          <!-- Timeline dot -->
+          <div class="absolute left-6 top-2 w-4 h-4 rounded-full bg-primary-500 ring-4 ring-neutral-900" />
+          
+          <!-- Content card -->
+          <div class="ml-20 card-hover">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+              <h3 class="text-xl font-bold text-white">{exp.title}</h3>
+              <span class="text-sm text-neutral-400 font-mono">{exp.period}</span>
+            </div>
+            <p class="text-primary-400 font-semibold mb-3">{exp.company}</p>
+            <p class="text-neutral-300 mb-4 leading-relaxed">{exp.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {exp.tech.map((tech) => (
+                <span class="px-3 py-1 text-xs glass rounded-full text-neutral-300">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </ScrollReveal>
+    ))}
   </div>
 </section>

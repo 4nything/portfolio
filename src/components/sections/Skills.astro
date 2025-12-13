@@ -1,0 +1,102 @@
+---
+import ScrollReveal from '../islands/ScrollReveal';
+
+const skillCategories = [
+  {
+    category: 'Frontend',
+    skills: [
+      { name: 'React', level: 90 },
+      { name: 'Angular', level: 85 },
+      { name: 'Tailwind', level: 90 },
+      { name: 'TypeScript', level: 90 },
+      { name: 'Next.js', level: 85 },
+      { name: 'Astro', level: 85 },
+    ],
+  },
+  {
+    category: 'Backend',
+    skills: [
+      { name: 'Node.js', level: 90 },
+      { name: 'Nest.js', level: 85 },
+      { name: 'Fastify', level: 85 },
+      { name: 'Fast API', level: 85 },
+      { name: 'C# .NET', level: 80 },
+      { name: 'Rust', level: 75 },
+      { name: 'GraphQL', level: 85 },
+      { name: 'REST APIs', level: 90 },
+      { name: 'TypeORM', level: 85 },
+      { name: 'Prisma', level: 85 },
+    ],
+  },
+  {
+    category: 'Mobile',
+    skills: [
+      { name: 'React Native', level: 85 },
+      { name: 'Flutter', level: 80 },
+    ],
+  },
+  {
+    category: 'Cloud & Storage',
+    skills: [
+      { name: 'AWS S3', level: 85 },
+      { name: 'Firebase', level: 85 },
+      { name: 'CDN', level: 80 },
+      { name: 'Cloudflare', level: 85 },
+    ],
+  },
+  {
+    category: 'DevOps',
+    skills: [
+      { name: 'CI/CD (Github Actions)', level: 85 },
+      { name: 'AWS', level: 85 },
+      { name: 'Docker', level: 90 },
+      { name: 'Kubernetes', level: 80 },
+      { name: 'Terraform', level: 80 },
+    ],
+  },
+  {
+    category: 'Databases',
+    skills: [
+      { name: 'PostgreSQL', level: 90 },
+      { name: 'MongoDB', level: 85 },
+      { name: 'MySQL', level: 85 },
+      { name: 'MSSQL', level: 80 },
+      { name: 'DynamoDB', level: 80 },
+      { name: 'SQLite', level: 85 },
+    ],
+  },
+];
+---
+
+<section id="skills" class="section-container bg-neutral-900/50">
+  <ScrollReveal>
+    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center">
+      <span class="gradient-text">Skills</span>
+    </h2>
+  </ScrollReveal>
+  
+  <ScrollReveal delay={100}>
+    <p class="text-lg text-neutral-400 text-center max-w-2xl mx-auto mb-16">
+      A comprehensive stack spanning frontend frameworks, backend services, mobile development, 
+      cloud infrastructure, DevOps practices, and database technologies. Always exploring new tools 
+      to build scalable, performant applications.
+    </p>
+  </ScrollReveal>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+    {skillCategories.map((category, catIndex) => (
+      <ScrollReveal delay={200 + catIndex * 100}>
+        <div class="card">
+          <h3 class="text-xl font-bold mb-4 gradient-text">{category.category}</h3>
+          <div class="flex flex-wrap gap-2">
+            {category.skills.map((skill) => (
+              <span class="px-3 py-1.5 text-sm glass rounded-lg text-neutral-300 hover:bg-white/10 hover:border-white/20 hover:scale-105 transition-all duration-200 border border-white/5 select-none">
+                {skill.name}
+              </span>
+            ))}
+          </div>
+        </div>
+      </ScrollReveal>
+    ))}
+  </div>
+</section>
