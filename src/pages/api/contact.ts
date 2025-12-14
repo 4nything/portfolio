@@ -1,7 +1,9 @@
+import type { APIRoute } from 'astro';
+
 /**
- * Cloudflare Pages Function to handle contact form submissions
+ * Astro API endpoint to handle contact form submissions
  * 
- * This function receives POST requests from the contact form and can:
+ * This endpoint receives POST requests from the contact form and can:
  * - Validate the form data
  * - Send emails (using a service like Resend, SendGrid, etc.)
  * - Store submissions in a database (like D1, KV, or external DB)
@@ -10,31 +12,10 @@
  * Route: /api/contact
  */
 
-// Type for Cloudflare Pages Function context
-interface PagesFunctionContext {
-  request: Request;
-  env?: any;
-  params?: Record<string, string>;
-  waitUntil?: (promise: Promise<any>) => void;
-  next?: () => Promise<Response>;
-  data?: any;
-}
-
-export const onRequest = async (context: PagesFunctionContext) => {
-  // Only allow POST requests
-  if (context.request.method !== 'POST') {
-    return new Response(
-      JSON.stringify({ error: 'Method not allowed' }),
-      { 
-        status: 405,
-        headers: { 'Content-Type': 'application/json' }
-      }
-    );
-  }
-
+export const POST: APIRoute = async ({ request }) => {
   try {
     // Parse the request body
-    const data = await context.request.json();
+    const data = await request.json();
     const { name, email, subject, message } = data;
 
     // Basic validation
