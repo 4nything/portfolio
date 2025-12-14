@@ -7,12 +7,14 @@ import Skills from '../components/sections/Skills.astro';
 import Contact from '../components/sections/Contact.astro';
 import Footer from '../components/sections/Footer.astro';
 import ContactBot from '../components/islands/ContactBot';
+import LoadingScreen from '../components/islands/LoadingScreen';
 ---
 
 <BaseLayout
   title="Luca Smigoski - Senior Software Engineer"
   description="Full-stack software engineer with over 6 years of experience. Specializing in frontend, backend, DevOps, mobile, and desktop applications."
 >
+  <LoadingScreen client:load />
   <Navigation />
   <main>
     <Hero />
