@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/cloudflare": "^9.2.1",
     "@astrojs/react": "^3.3.4",
     "@astrojs/tailwind": "^5.1.0",
     "@types/react": "^18.3.2",
@@ -20,8 +21,8 @@
     "framer-motion": "^11.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "three": "^0.161.0",
     "tailwindcss": "^3.4.3",
+    "three": "^0.161.0",
     "typescript": "^5.4.5"
   }
 }

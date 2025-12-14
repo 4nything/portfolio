@@ -11,6 +11,7 @@ A premium, production-grade personal developer portfolio built with Astro, Tailw
 - **Fully Accessible**: Keyboard navigation, ARIA labels, focus styles
 - **SEO Ready**: Meta tags, semantic HTML, optimized structure
 - **Responsive**: Mobile-first design for all screen sizes
+- **Cloudflare Pages**: Configured for deployment on Cloudflare Pages with serverless functions
 
 ## 📦 Installation
 
@@ -34,6 +35,9 @@ The site will be available at `http://localhost:4321` in development mode.
 
 ```
 /
+├── functions/            # Cloudflare Pages Functions
+│   └── api/
+│       └── contact.ts   # Contact form API endpoint
 ├── public/              # Static assets (images, favicons)
 │   └── favicon.png
 ├── src/
@@ -41,191 +45,131 @@ The site will be available at `http://localhost:4321` in development mode.
 │   │   ├── islands/     # React interactive components
 │   │   │   ├── Background3D.tsx    # 3D particle background
 │   │   │   ├── ContactBot.tsx      # Floating 3D contact widget
-│   │   │   └── ScrollReveal.tsx    # Scroll animation wrapper
+│   │   │   ├── ContactForm.tsx     # Contact form with API integration
+│   │   │   ├── ScrollReveal.tsx    # Scroll animation wrapper
+│   │   │   └── Toast.tsx           # Toast notifications
 │   │   ├── sections/    # Astro section components
 │   │   │   ├── Hero.astro
 │   │   │   ├── About.astro
 │   │   │   ├── Experience.astro
-│   │   │   ├── Projects.astro
 │   │   │   ├── Skills.astro
 │   │   │   ├── Contact.astro
 │   │   │   └── Footer.astro
 │   │   └── Navigation.astro
 │   ├── layouts/
-│   │   └── BaseLayout.astro    # Base layout with SEO & meta
+│   │   └── BaseLayout.astro
 │   ├── pages/
-│   │   └── index.astro         # Main page
-│   ├── styles/
-│   │   └── global.css          # Global styles & Tailwind setup
-│   └── env.d.ts
-├── astro.config.mjs
-├── tailwind.config.mjs
-├── tsconfig.json
-└── package.json
+│   │   └── index.astro
+│   └── styles/
+│       └── global.css
+├── astro.config.mjs     # Astro configuration with Cloudflare adapter
+├── tailwind.config.mjs  # Tailwind CSS configuration
+└── tsconfig.json        # TypeScript configuration
 ```
 
-## 📝 Content Replacement Guide
+## ☁️ Cloudflare Pages Functions
 
-### 1. Personal Information
+This project is configured to use Cloudflare Pages Functions for serverless API endpoints. The contact form uses a serverless function located at `functions/api/contact.ts`.
 
-**Hero Section** (`src/components/sections/Hero.astro`):
-- Line ~11: Update name "Luca Smigoski" to your name
-- Line ~16: Update role "Software Engineer" to your role
-- Line ~20-23: Replace lorem ipsum description with your bio
+### Contact Form API
 
-**Footer** (`src/components/sections/Footer.astro`):
-- Line ~8: The footer already includes "Designed & built by Luca Smigoski" - update to your name
+The contact form endpoint is available at `/api/contact` and accepts POST requests with the following format:
 
-**Navigation** (`src/components/Navigation.astro`):
-- Line ~10: Update "Luca Smigoski" link text to your name
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "subject": "Project Inquiry",
+  "message": "Hello, I'd like to discuss a project..."
+}
+```
 
-**SEO & Meta** (`src/pages/index.astro`):
-- Lines 12-13: Update title and description for SEO
+### Customizing the Contact Function
 
-### 2. Social Media Links
+To add email notifications or database storage, update `functions/api/contact.ts`:
 
-**Hero Section** (`src/components/sections/Hero.astro`):
-- Lines ~38-73: Update the `href` attributes for social icons (GitHub, LinkedIn, Twitter, Email)
-- Replace `#` placeholders with your actual social media URLs
+1. **Email Notifications**: Integrate with services like:
+   - [Resend](https://resend.com/) (recommended for Cloudflare)
+   - SendGrid
+   - Mailgun
 
-**Contact Section** (`src/components/sections/Contact.astro`):
-- Line ~93: Update email `luca@example.com` to your actual email
-- Lines ~95-120: Update social links
+2. **Database Storage**: Use Cloudflare's data storage options:
+   - [D1](https://developers.cloudflare.com/d1/) - SQLite database
+   - [KV](https://developers.cloudflare.com/kv/) - Key-value store
+   - External databases via fetch
 
-**Contact Bot** (`src/components/islands/ContactBot.tsx`):
-- Line ~93: Update placeholder email `luca@example.com` to your actual email
+3. **Environment Variables**: Add secrets in Cloudflare Pages dashboard:
+   - Go to Settings → Environment Variables
+   - Add variables like `RESEND_API_KEY`, `DB_URL`, etc.
+   - Access via `context.env.YOUR_VARIABLE` in functions
 
-### 3. About Section
+### Example: Adding Resend Email Integration
 
-**About Section** (`src/components/sections/About.astro`):
-- Lines ~11-16: Replace lorem ipsum with your actual bio
-- Lines ~24-57: Update tech stack badges - replace placeholder tech names and icons
-- Lines ~61-73: Update highlights/metrics cards with your actual achievements
+```typescript
+// In functions/api/contact.ts
+const RESEND_API_KEY = context.env.RESEND_API_KEY;
 
-### 4. Experience Section
-
-**Experience Section** (`src/components/sections/Experience.astro`):
-- Lines ~7-35: Replace the `experiences` array with your actual work history
-  - Update `title`, `company`, `period`, `description`, and `tech` arrays
-  - Add or remove experience entries as needed
-
-### 5. Projects Section
-
-**Projects Section** (`src/components/sections/Projects.astro`):
-- Lines ~7-40: Replace the `projects` array with your actual projects
-  - Update `title`, `description`, and `tech` arrays
-  - Set `featured: true` for one project to feature it prominently
-  - Update links in buttons (lines ~52, ~69) when you have project URLs
-  - Currently shows placeholder preview images - replace with actual project screenshots in `public/` folder
-
-### 6. Skills Section
-
-**Skills Section** (`src/components/sections/Skills.astro`):
-- Lines ~7-48: Update the `skillCategories` array with your actual skills
-  - Modify categories (Frontend, Backend, DevOps, Tools) as needed
-  - Update skill names and proficiency levels (0-100)
-  - Add or remove skills/categories
-
-### 7. Images & Assets
-
-**Profile Picture** (if you want to add one):
-- Add your profile image to `public/profile.jpg`
-- Reference it in components as `/profile.jpg`
-
-**Project Images**:
-- Add project screenshots/previews to `public/` folder
-- Update image paths in `Projects.astro` (currently using placeholder divs)
-
-**Favicon**:
-- Replace `public/favicon.png` with your own favicon
-
-### 8. Color Scheme (Optional)
-
-**Tailwind Config** (`tailwind.config.mjs`):
-- Lines ~6-40: Update color palette in the `theme.extend.colors` section
-- Primary colors: Currently purple (`primary`) and blue (`accent`)
-- Adjust to match your brand/theme
-
-**Global Styles** (`src/styles/global.css`):
-- Line ~11: Update CSS custom properties if you change color scheme
-
-### 9. Contact Form
-
-**Contact Section** (`src/components/sections/Contact.astro`):
-- The form is currently non-functional (placeholder)
-- To make it functional:
-  1. Set up a form handler service (Formspree, Netlify Forms, etc.)
-  2. Update the `form` action attribute and method
-  3. Add form validation and submission handling
-
-## 🎨 Design System
-
-### Colors
-- **Primary**: Purple (`primary-500`: #a855f7)
-- **Accent**: Blue (`accent-500`: #0ea5e9)
-- **Neutral**: Dark theme with white/transparent overlays
-
-### Typography
-- **Sans**: Inter (body text)
-- **Mono**: Fira Code (code/technical text)
-
-### Components
-- Glass cards with backdrop blur
-- Gradient text effects
-- Hover animations and micro-interactions
-- Scroll reveal animations (with reduced motion support)
-
-## 🔧 Configuration
-
-### Performance Optimizations
-- 3D components use `client:load` for progressive enhancement
-- Canvas resolution capped at devicePixelRatio max 2
-- Animations pause when tab is hidden
-- Reduced motion preferences respected
-
-### Accessibility
-- Keyboard navigation throughout
-- Focus styles on all interactive elements
-- ARIA labels on icons and buttons
-- Semantic HTML structure
-- Reduced motion support
-
-## 📱 Browser Support
-
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- WebGL support required for 3D elements (graceful fallback included)
-- Progressive enhancement for older browsers
+const emailResponse = await fetch('https://api.resend.com/emails', {
+  method: 'POST',
+  headers: {
+    'Authorization': `Bearer ${RESEND_API_KEY}`,
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    from: 'Portfolio <noreply@yourdomain.com>',
+    to: ['contact@lucasmigoski.com.ar'],
+    subject: `New Contact: ${subject}`,
+    html: `
+      <h2>New Contact Form Submission</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Subject:</strong> ${subject}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message}</p>
+    `,
+  }),
+});
+```
 
 ## 🚀 Deployment
 
-### Build Command
-```bash
-npm run build
-```
+### Cloudflare Pages
 
-Output will be in the `dist/` directory, ready for deployment to:
-- Vercel (recommended)
-- Netlify
-- Cloudflare Pages
-- Any static hosting service
+1. Connect your repository to Cloudflare Pages
+2. Set build command: `npm run build`
+3. Set build output directory: `dist`
+4. Deploy!
+
+The Cloudflare adapter is already configured in `astro.config.mjs`.
 
 ### Environment Variables
-No environment variables required for basic functionality. Add them if you implement:
-- Contact form backend
-- Analytics
-- API integrations
 
-## 📄 License
+Add any required environment variables in the Cloudflare Pages dashboard:
+- Settings → Environment Variables
+- Add production/preview variables as needed
 
-This portfolio is personal work. Feel free to use as inspiration, but replace all content with your own.
+## 🔧 Development
 
-## 🤝 Credits
+### Running Locally
 
-- Built with [Astro](https://astro.build)
-- Styled with [Tailwind CSS](https://tailwindcss.com)
-- 3D powered by [Three.js](https://threejs.org)
-- Animations with [Framer Motion](https://www.framer.com/motion/)
+```bash
+npm run dev
+```
 
----
+For local testing of Cloudflare Functions, use Wrangler:
 
-**Designed & built by Luca Smigoski**
+```bash
+npx wrangler pages dev dist
+```
+
+## 📝 License
+
+This project is private and proprietary.
+
+## 👤 Author
+
+**Luca Smigoski**
+- Website: https://lucasmigoski.com.ar
+- Email: contact@lucasmigoski.com.ar
+- GitHub: [@4nything](https://github.com/4nything)
+- LinkedIn: [Luca Smigoski](https://www.linkedin.com/in/luca-smigoski/)
