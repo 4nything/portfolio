@@ -1,141 +1,73 @@
 ---
-import ScrollReveal from '../islands/ScrollReveal';
-
-const experiences = [
+const jobs = [
   {
-    title: 'Software Engineer',
+    now: true,
+    when: '2026 - now',
+    role: 'Founder & CEO',
+    company: 'Talkium',
+    text: 'Voice, chat and streaming in one native app. Product, company and code, from the Rust media server to the client.',
+    tech: ['Rust', 'Axum', 'Tauri', 'SolidJS', 'React Native'],
+  },
+  {
+    when: 'Oct 2024 - now',
+    role: 'Software Engineer',
     company: 'Globaltask',
-    period: 'Oct 2024 - Current',
-    description: 'Develop web applications for audit and compliance sector, working directly with Safeguard Privacy on mission-critical software solutions.',
-    bullets: [
-      'Handle sensitive data processing and compliance workflows, ensuring security and regulatory adherence',
-      'Work across the full stack using Angular (versions 8 to 20), .NET 8, Redis, MSSQL, TypeScript, and TypeORM',
-      'Manage complex state management, optimize performance, and maintain high code quality standards',
-    ],
-    tech: ['Angular', 'NestJS', 'C# .NET', 'MSSQL', 'Redis', 'Docker', 'TypeScript', 'TypeORM'],
+    text: 'Web applications for the audit and compliance sector, handling sensitive data and regulated workflows.',
+    tech: ['Angular', '.NET 8', 'Redis', 'MSSQL', 'TypeScript'],
   },
   {
-    title: 'Software Engineer',
+    when: 'Sep 2018 - now',
+    role: 'Software Engineer',
     company: 'Freelance',
-    period: 'Sep 2018 - Current',
-    description: 'Deliver full-stack and mobile solutions for local and international clients, using freelance projects as a continuous learning platform.',
-    bullets: [
-      'Built enterprise management systems using Angular (versions 8-14) for aluminum window company and real estate agency',
-      'Developed Android pet adoption platform and AI-powered personal trainer applications with Flutter, NestJS, and OpenAI',
-      'Created Web3 portfolio control application with MetaMask and Phantom wallet integrations for blockchain asset management',
-      'Currently building personal financial management platform with Next.js, NestJS, MongoDB, and payment integrations (Stripe, MercadoPago)',
-    ],
-    tech: ['React', 'Angular', 'Next.js', 'NestJS', 'TypeScript', 'Flutter', 'MongoDB', 'PostgreSQL', 'Web3', 'Stripe', 'MercadoPago', 'OpenAI'],
+    text: 'Enterprise systems, a Web3 portfolio tracker, a pet adoption app and AI-powered apps for clients in Argentina and abroad.',
+    tech: ['Angular', 'Next.js', 'NestJS', 'Flutter', 'OpenAI'],
   },
   {
-    title: 'Software Engineer',
+    when: 'Mar 2023 - Oct 2024',
+    role: 'Software Engineer',
     company: 'Void.gg',
-    period: 'Mar 2023 - Oct 2024',
-    description: 'Developed full-stack web applications with end-to-end ownership from architecture to deployment.',
-    bullets: [
-      'Built comprehensive tracking system for player and match data in Counter Strike 2, Old School Runescape, and Fortnite',
-      'Created web scraping infrastructure for news aggregation and implemented AI-powered content generation systems using OpenAI',
-      'Managed DevOps responsibilities including server instances, serverless functions, and queue systems on AWS',
-      'Led framework migrations, library updates, and greenfield project development',
-    ],
-    tech: ['Next.js', 'React', 'NestJS', 'Python', 'Rust', 'TypeScript', 'MongoDB', 'PostgreSQL', 'AWS', 'Github Actions', 'Apify', 'OpenAI'],
+    text: 'Player and match tracking for Counter-Strike 2, OSRS and Fortnite, scraping pipelines, AI content and AWS infrastructure.',
+    tech: ['Next.js', 'NestJS', 'Rust', 'Python', 'AWS'],
   },
   {
-    title: 'Full-stack Developer',
+    when: 'Aug 2022 - Jun 2023',
+    role: 'Senior Front-End Developer',
     company: 'Naranja X',
-    period: 'Aug 2022 - Jun 2023',
-    description: 'Developed and maintained critical features for financial products including loans, credit cards, and virtualized bank accounts.',
-    bullets: [
-      'Managed weekly deployments, conducted thorough code reviews, and resolved production bugs using Angular versions 12-14',
-      'Promoted to Senior Front-End Developer, leading the front-end team and taking ownership of architectural decisions',
-      'Established code quality standards and team mentoring practices',
-    ],
-    tech: ['Angular', 'TypeScript', 'Node.js', 'Express'],
+    text: 'Loans, credit cards and virtual bank accounts. Led the front-end team and its architecture decisions.',
+    tech: ['Angular', 'TypeScript', 'Node.js'],
   },
   {
-    title: 'Full-stack Developer',
+    when: 'Oct 2021 - Aug 2022',
+    role: 'Full-stack Developer',
     company: 'Epidata',
-    period: 'Oct 2021 - Aug 2022',
-    description: 'Served as a semi-senior front-end developer contracted through Epidata, initially assigned to Naranja X.',
-    bullets: [
-      'Developed new features and resolved critical bugs using Angular 12 for core financial products',
-      'Contributed to loans, credit cards, and virtualized bank accounts features',
-      'Demonstrated strong performance leading to direct employment with Naranja X',
-    ],
-    tech: ['Angular', 'TypeScript', 'Node.js', 'Express'],
+    text: 'Contracted into Naranja X as a semi-senior front-end developer, then hired directly by them.',
+    tech: ['Angular', 'TypeScript', 'Express'],
   },
   {
-    title: 'Frontend Developer',
+    when: 'Jul 2021 - Oct 2021',
+    role: 'Frontend Developer',
     company: 'Baufest',
-    period: 'Jul 2021 - Oct 2021',
-    description: 'Developed and maintained features for an internal management system at Molinos Agro.',
-    bullets: [
-      'Built system to control and geolocate ships at sea, tracking their segments and journeys to international destinations',
-      'Worked with Angular versions 8-10 to enhance system functionality and reliability',
-      'Supported critical logistical and export processes for the company',
-    ],
-    tech: ['Angular', 'TypeScript', 'C# .NET'],
+    text: 'An internal system for Molinos Agro that tracks and geolocates ships on their export routes.',
+    tech: ['Angular', '.NET'],
   },
 ];
 ---
 
-<section id="experience" class="section-container bg-neutral-900/50">
-  <ScrollReveal>
-    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center">
-      <span class="gradient-text">Experience</span>
-    </h2>
-  </ScrollReveal>
-  
-  <ScrollReveal delay={100}>
-    <p class="text-lg text-neutral-400 text-center max-w-2xl mx-auto mb-16">
-      Over 6 years of experience building scalable web applications, from financial technology platforms 
-      to gaming tracking systems. Led front-end teams, managed full-stack projects, and continuously 
-      expanded skills across diverse technologies and industries.
-    </p>
-  </ScrollReveal>
-
-  <div class="max-w-4xl mx-auto">
-    {experiences.map((exp, index) => (
-      <ScrollReveal delay={index * 100}>
-        <div class="relative mb-12">
-          <!-- Timeline line -->
-          {index < experiences.length - 1 && (
-            <div class="absolute left-8 top-16 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 to-transparent" />
-          )}
-          
-          <!-- Timeline dot -->
-          <div class="absolute left-6 top-2 w-4 h-4 rounded-full bg-primary-500 ring-4 ring-neutral-900" />
-          
-          <!-- Content card -->
-          <div class="ml-20 card-hover">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-              <h3 class="text-xl font-bold text-white">{exp.title}</h3>
-              <span class="text-sm text-neutral-400 font-mono">{exp.period}</span>
-            </div>
-            <p class="text-primary-400 font-semibold mb-3">{exp.company}</p>
-            {exp.description && (
-              <p class="text-neutral-300 mb-3 leading-relaxed">{exp.description}</p>
-            )}
-            {exp.bullets && (
-              <ul class="mb-4 space-y-2">
-                {exp.bullets.map((bullet) => (
-                  <li class="text-neutral-300 flex items-start">
-                    <span class="text-primary-400 mr-2 mt-1">•</span>
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-            <div class="flex flex-wrap gap-2">
-              {exp.tech.map((tech) => (
-                <span class="px-3 py-1 text-xs glass rounded-full text-neutral-300">
-                  {tech}
-                </span>
-              ))}
-            </div>
+<section id="experience" class="section">
+  <div class="wrap">
+    <p class="kicker" data-r>experience</p>
+    <h2 class="h2" data-r style="--d: 60ms">Six years of shipping before Talkium.</h2>
+    <div class="jobs">
+      {jobs.map((j, i) => (
+        <article class:list={['card', 'job', { now: j.now }]} data-r style={`--d: ${(i % 3) * 70}ms`}>
+          <p class="when">{j.when}</p>
+          <div>
+            <h3>{j.role} <span>at {j.company}</span></h3>
+            <p>{j.text}</p>
+            <div class="chips">{j.tech.map((t) => <span class="chip">{t}</span>)}</div>
           </div>
-        </div>
-      </ScrollReveal>
-    ))}
+        </article>
+      ))}
+    </div>
   </div>
 </section>

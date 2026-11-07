@@ -2,26 +2,23 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/sections/Hero.astro';
+import Talkium from '../components/sections/Talkium.astro';
+import About from '../components/sections/About.astro';
 import Experience from '../components/sections/Experience.astro';
-import Skills from '../components/sections/Skills.astro';
+import Stack from '../components/sections/Stack.astro';
 import Contact from '../components/sections/Contact.astro';
 import Footer from '../components/sections/Footer.astro';
-import ContactBot from '../components/islands/ContactBot';
-import LoadingScreen from '../components/islands/LoadingScreen';
 ---
 
-<BaseLayout
-  title="Luca Smigoski - Senior Software Engineer"
-  description="Full-stack software engineer with over 6 years of experience. Specializing in frontend, backend, DevOps, mobile, and desktop applications."
->
-  <LoadingScreen client:load />
+<BaseLayout>
   <Navigation />
   <main>
     <Hero />
+    <Talkium />
+    <About />
     <Experience />
-    <Skills />
+    <Stack />
     <Contact />
   </main>
   <Footer />
-  <ContactBot client:load />
 </BaseLayout>

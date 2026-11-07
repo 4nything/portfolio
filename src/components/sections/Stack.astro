@@ -1,0 +1,15 @@
+---
+const a = ['Rust', 'TypeScript', 'SolidJS', 'React', 'Tauri', 'Axum', 'Angular', 'Next.js', 'Astro', 'Tailwind'];
+const b = ['NestJS', 'Node.js', '.NET', 'Python', 'PostgreSQL', 'MongoDB', 'Redis', 'AWS', 'Docker', 'Cloudflare', 'Flutter', 'React Native'];
+---
+
+<section class="section" style="padding-block: clamp(40px, 6vw, 80px)">
+  <div class="wrap">
+    <p class="kicker" data-r>stack</p>
+    <h2 class="h2" data-r style="--d: 60ms">What I build with.</h2>
+  </div>
+  <div style="margin-top: 48px" data-r>
+    <div class="marquee"><div class="track">{[...a, ...a].map((t) => <span>{t}</span>)}</div></div>
+    <div class="marquee rev"><div class="track">{[...b, ...b].map((t) => <span>{t}</span>)}</div></div>
+  </div>
+</section>

@@ -14,15 +14,15 @@
     "@astrojs/cloudflare": "^9.2.1",
     "@astrojs/react": "^3.3.4",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/syne": "^5.3.0",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
-    "@types/three": "^0.161.2",
     "astro": "^4.7.1",
-    "framer-motion": "^11.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.3",
-    "three": "^0.161.0",
     "typescript": "^5.4.5"
   }
 }

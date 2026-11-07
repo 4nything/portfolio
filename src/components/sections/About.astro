@@ -1,85 +1,27 @@
 ---
-import ScrollReveal from '../islands/ScrollReveal';
 ---
 
-<section id="about" class="section-container">
-  <ScrollReveal>
-    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-center">
-      <span class="gradient-text">About Me</span>
-    </h2>
-  </ScrollReveal>
-  
-  <ScrollReveal delay={100}>
-    <p class="text-lg md:text-xl text-neutral-300 text-center max-w-3xl mx-auto mb-16 leading-relaxed">
-      I'm a 28-year-old software engineer who's been coding for over 6 years, and honestly, 
-      I love every part of it. From pixel-perfect UIs to scalable backend systems, from 
-      deploying to the cloud to building native mobile apps—I enjoy the full spectrum of 
-      software development. The constant evolution of technology keeps me excited, and I'm 
-      always diving into new tools and frameworks to solve problems better. When I'm not 
-      coding, you'll probably find me exploring the latest tech trends or contributing to 
-      open source projects.
-    </p>
-  </ScrollReveal>
-
-  <!-- Tech Stack -->
-  <ScrollReveal delay={200}>
-    <div class="mb-16">
-      <h3 class="text-2xl font-semibold mb-8 text-center">Tech Stack</h3>
-      <div class="flex flex-wrap justify-center gap-4">
-        <div class="glass px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-white/10 transition-all">
-          <div class="w-6 h-6 bg-primary-500 rounded"></div>
-          <span>React</span>
-        </div>
-        <div class="glass px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-white/10 transition-all">
-          <div class="w-6 h-6 bg-accent-500 rounded"></div>
-          <span>TypeScript</span>
-        </div>
-        <div class="glass px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-white/10 transition-all">
-          <div class="w-6 h-6 bg-primary-400 rounded"></div>
-          <span>Node.js</span>
-        </div>
-        <div class="glass px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-white/10 transition-all">
-          <div class="w-6 h-6 bg-accent-400 rounded"></div>
-          <span>Python</span>
-        </div>
-        <div class="glass px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-white/10 transition-all">
-          <div class="w-6 h-6 bg-primary-600 rounded"></div>
-          <span>AWS</span>
-        </div>
-        <div class="glass px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-white/10 transition-all">
-          <div class="w-6 h-6 bg-accent-600 rounded"></div>
-          <span>Docker</span>
-        </div>
-        <div class="glass px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-white/10 transition-all">
-          <div class="w-6 h-6 bg-primary-500 rounded"></div>
-          <span>GraphQL</span>
-        </div>
-        <div class="glass px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-white/10 transition-all">
-          <div class="w-6 h-6 bg-accent-500 rounded"></div>
-          <span>PostgreSQL</span>
-        </div>
+<section id="about" class="section">
+  <div class="wrap">
+    <p class="kicker" data-r>about</p>
+    <h2 class="h2" data-r style="--d: 60ms">Founder who still writes code.</h2>
+    <div class="about-grid" style="margin-top: 48px">
+      <div class="about-copy">
+        <p data-r>
+          I'm the <strong>founder and CEO of Talkium</strong>. I set the product, run the company and build
+          across the stack: a Rust backend, a custom media server and the desktop and mobile clients.
+        </p>
+        <p data-r style="--d: 100ms">
+          Before Talkium I spent six years as a full-stack engineer in fintech, gaming data and compliance
+          software, and I still take on that kind of work.
+        </p>
       </div>
+      <dl class="card facts" data-r style="--d: 160ms">
+        <div><dt>role</dt><dd>Founder &amp; CEO</dd></div>
+        <div><dt>company</dt><dd>Talkium, LLC</dd></div>
+        <div><dt>incorporated</dt><dd>Delaware, 2026</dd></div>
+        <div><dt>engineering</dt><dd>6+ years</dd></div>
+      </dl>
     </div>
-  </ScrollReveal>
-
-  <!-- Highlights -->
-  <ScrollReveal delay={300}>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="card-hover">
-        <div class="text-4xl font-bold gradient-text mb-2">6+</div>
-        <div class="text-neutral-400 mb-2">Years Experience</div>
-        <div class="text-sm text-neutral-500">Building scalable applications across the full stack.</div>
-      </div>
-      <div class="card-hover">
-        <div class="text-4xl font-bold gradient-text mb-2">50+</div>
-        <div class="text-neutral-400 mb-2">Projects Completed</div>
-        <div class="text-sm text-neutral-500">Sed do eiusmod tempor incididunt ut labore et dolore.</div>
-      </div>
-      <div class="card-hover">
-        <div class="text-4xl font-bold gradient-text mb-2">20+</div>
-        <div class="text-neutral-400 mb-2">Happy Clients</div>
-        <div class="text-sm text-neutral-500">Ut enim ad minim veniam, quis nostrud exercitation.</div>
-      </div>
-    </div>
-  </ScrollReveal>
+  </div>
 </section>

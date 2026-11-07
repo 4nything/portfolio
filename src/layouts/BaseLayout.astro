@@ -1,4 +1,9 @@
 ---
+import '@fontsource/syne/700.css';
+import '@fontsource/syne/800.css';
+import '@fontsource/dm-sans/400.css';
+import '@fontsource/dm-sans/500.css';
+import '@fontsource/jetbrains-mono/400.css';
 import '../styles/global.css';
 
 export interface Props {
@@ -7,94 +12,88 @@ export interface Props {
 }
 
 const {
-  title = 'Luca Smigoski - Senior Software Engineer',
-  description = 'Full-stack software engineer with over 6 years of experience. Specializing in frontend, backend, DevOps, mobile, and desktop applications.',
+  title = 'Luca Smigoski - Founder & CEO of Talkium',
+  description = 'Founder & CEO of Talkium, a performance-first voice, chat and streaming app. Full-stack engineer with 6+ years of experience.',
 } = Astro.props;
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : new URL(Astro.url.pathname, Astro.url.origin);
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
-    
-    <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
-    
-    <!-- Open Graph / Facebook -->
+
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
-    
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
+
     <title>{title}</title>
-    <script is:inline>
-      // Initialize scroll reveals
-      (function() {
-        function initScrollReveals() {
-          const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          if (prefersReducedMotion) {
-            document.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed'));
-            return;
-          }
-
-          const reveals = document.querySelectorAll('.reveal:not(.revealed)');
-          if (reveals.length === 0) return;
-
-          const observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  const delay = parseInt(entry.target.getAttribute('data-reveal-delay') || '0');
-                  setTimeout(() => {
-                    entry.target.classList.add('revealed');
-                  }, delay);
-                  observer.unobserve(entry.target);
-                }
-              });
-            },
-            {
-              threshold: 0.1,
-              rootMargin: '0px 0px -50px 0px',
-            }
-          );
-
-          reveals.forEach((reveal) => {
-            const rect = reveal.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-              const delay = parseInt(reveal.getAttribute('data-reveal-delay') || '0');
-              setTimeout(() => {
-                reveal.classList.add('revealed');
-              }, delay);
-            } else {
-              observer.observe(reveal);
-            }
-          });
-        }
-
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', initScrollReveals);
-        } else {
-          initScrollReveals();
-        }
-      })();
-    </script>
+    <script is:inline>document.documentElement.classList.add('js');</script>
   </head>
-  <body class="min-h-screen">
+  <body>
     <slot />
+    <script>
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Entrances: each part arrives once, staggered.
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add('in');
+              io.unobserve(e.target);
+            }
+          }
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
+      );
+      document.querySelectorAll('[data-r]').forEach((el) => io.observe(el));
+
+      // The app window leans toward the pointer.
+      const stage = document.querySelector<HTMLElement>('.stage');
+      const win = stage?.querySelector<HTMLElement>('.window');
+      if (stage && win && !reduce && matchMedia('(pointer: fine)').matches) {
+        stage.addEventListener('pointermove', (e) => {
+          const r = stage.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - 0.5;
+          const y = (e.clientY - r.top) / r.height - 0.5;
+          win.style.setProperty('--ry', `${(x * 6).toFixed(2)}deg`);
+          win.style.setProperty('--rx', `${(-y * 5).toFixed(2)}deg`);
+        });
+        stage.addEventListener('pointerleave', () => {
+          win.style.setProperty('--ry', '0deg');
+          win.style.setProperty('--rx', '0deg');
+        });
+      }
+
+      // The live thing: your ping to this page, measured from your browser.
+      const outs = document.querySelectorAll<HTMLElement>('[data-ping]');
+      if (outs.length) {
+        const measure = async () => {
+          let text = '--';
+          try {
+            const t = performance.now();
+            await fetch('/talkium/kick.svg?t=' + Date.now(), { method: 'HEAD', cache: 'no-store' });
+            text = String(Math.max(1, Math.round(performance.now() - t)));
+          } catch {}
+          outs.forEach((o) => (o.textContent = text));
+        };
+        measure();
+        setInterval(() => !document.hidden && measure(), 3000);
+      }
+    </script>
   </body>
 </html>
